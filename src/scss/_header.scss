@@ -1,0 +1,31 @@
+@use "./mixins" as *;
+
+.header {
+  width: auto;
+  padding: 1rem;
+  transition: padding 0.3s ease;
+
+  @include media-query(768px) {
+    & {
+      padding-inline: 3rem;
+    }
+  }
+
+  @include media-query(1000px) {
+    & {
+      padding: 1.5rem 5rem;
+    }
+  }
+
+  .mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    min-height: 100vh;
+    background-color: white;
+    padding: 1rem;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+}
