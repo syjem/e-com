@@ -4,11 +4,12 @@ import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import DarkOnToggle from "./DarkOnToggle";
-import MobileNavList from "./MobileNavList";
+import MobileNav from "./MobileNav";
+import DesktopNav from "./DesktopNav";
 import MenuXLogo from "./MenuXLogo";
 import CartXAvatar from "./CartXAvatar";
+
 import "../../scss/_header.scss";
-import DesktopNavList from "./DesktopNavList";
 
 function Header() {
   const [navToggle, setNavToggle] = useState<boolean>(false);
@@ -47,16 +48,17 @@ function Header() {
       <Stack
         direction="row"
         justifyContent="space-between"
+        alignItems="center"
         sx={{
           width: "100%",
         }}
       >
-        <Stack direction="row" gap={4}>
+        <Stack direction="row" gap={3}>
           <MenuXLogo handleNavOpen={handleNavOpen} desktop={desktop} />
-          <DesktopNavList desktop={desktop} />
+          <DesktopNav desktop={desktop} />
         </Stack>
 
-        <MobileNavList
+        <MobileNav
           navToggle={navToggle}
           desktop={desktop}
           handleCloseNav={handleCloseNav}

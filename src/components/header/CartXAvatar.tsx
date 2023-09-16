@@ -10,7 +10,7 @@ type CartXAvatarProps = {
 
 function CartXAvatar({ desktop }: CartXAvatarProps) {
   return (
-    <Stack direction="row" alignItems="center" gap={desktop ? 2 : 1}>
+    <Stack direction="row" alignItems="center" gap={desktop ? 1.5 : 0.5}>
       <IconButton color={"inherit"} aria-label="add to shopping cart">
         <AddShoppingCartIcon fontSize={desktop ? "medium" : "small"} />
       </IconButton>

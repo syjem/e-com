@@ -2,6 +2,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import { Link } from "react-router-dom";
 
 type MenuXLogoProps = {
   handleNavOpen: () => void;
@@ -26,7 +27,33 @@ function MenuXLogo({ handleNavOpen, desktop }: MenuXLogoProps) {
           paddingLeft: desktop ? "0.5rem" : 0,
         }}
       >
-        Sneakers
+        <Link
+          to="/"
+          style={{
+            fontSize: "1.2rem",
+            color: "var(--clr-dark)",
+            fontWeight: 800,
+            display: "flex",
+            alignItems: "center",
+            paddingBottom: "0.3rem",
+          }}
+        >
+          <span
+            style={{
+              fontStyle: "italic",
+            }}
+          >
+            S
+          </span>
+          neaker
+          <span
+            style={{
+              color: "var(--clr-accent)",
+            }}
+          >
+            s
+          </span>
+        </Link>
       </Box>
     </Stack>
   );

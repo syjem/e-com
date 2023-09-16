@@ -1,14 +1,14 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import { Link } from "react-router-dom";
+import Lists from "../../data/Lists";
 
-const Lists = ["Collections", "Men", "Women", "About", "Contacts"];
-
-type DesktopNavListProp = {
+type DesktopNavProps = {
   desktop: boolean;
 };
 
-function DesktopNavList({ desktop }: DesktopNavListProp) {
+function DesktopNav({ desktop }: DesktopNavProps) {
   return (
     <List
       className="desktop-nav-menu"
@@ -18,19 +18,21 @@ function DesktopNavList({ desktop }: DesktopNavListProp) {
     >
       {Lists.map((list) => (
         <ListItem
-          key={list}
+          key={list.list}
+          className="nav-list"
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: "1rem",
-            padding: "0 0.7rem",
+            padding: "0 0.5rem",
           }}
         >
-          <ListItemText primary={list} />
+          <Link to={list.link} className="nav-link" key={list.list}>
+            <ListItemText primary={list.list} />
+          </Link>
         </ListItem>
       ))}
     </List>
   );
 }
 
-export default DesktopNavList;
+export default DesktopNav;
