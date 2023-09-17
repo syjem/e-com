@@ -8,11 +8,10 @@ function DarkOnToggle({ handleCloseNav }: DarkOnToggleProps) {
       style={{
         top: 0,
         right: 0,
-        zIndex: 1,
+        zIndex: 5,
         width: "100%",
         display: "block",
-        maxWidth: "100%",
-        minHeight: "100vh",
+        height: "100%",
         position: "absolute",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}

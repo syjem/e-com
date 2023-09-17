@@ -1,0 +1,30 @@
+.add-to-cart-section {
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .btn-group {
+    background-color: var(--clr-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: unset;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--clr-accent);
+
+    &:hover {
+      background-color: hsla(26, 100%, 55%, 0.9);
+    }
+  }
+}

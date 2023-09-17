@@ -1,46 +1,30 @@
-import { useEffect, useState } from "react";
-
 import Stack from "@mui/material/Stack";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
-import DarkOnToggle from "./DarkOnToggle";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import MenuXLogo from "./MenuXLogo";
 import CartXAvatar from "./CartXAvatar";
+import DarkOnToggle from "../DarkOnToggle";
 
 import "../../scss/_header.scss";
 
-function Header() {
-  const [navToggle, setNavToggle] = useState<boolean>(false);
-  const desktop = useMediaQuery("(min-width:600px)");
+type HeaderProps = {
+  handleNavOpen: () => void;
+  navToggle: boolean;
+  desktop: boolean;
+  handleCloseNav: () => void;
+  showDarkOnToggle: boolean;
+  cartItem: number;
+};
 
-  const [showDarkOnToggle, setShowDarkOnToggle] = useState<boolean>(false);
-
-  const handleNavOpen = () => {
-    setNavToggle(true);
-  };
-
-  const handleCloseNav = () => {
-    setNavToggle(false);
-    setShowDarkOnToggle(false);
-  };
-
-  useEffect(() => {
-    if (desktop) {
-      setNavToggle(false);
-      setShowDarkOnToggle(false);
-    } else if (navToggle) {
-      const timeoutId = setTimeout(() => {
-        setShowDarkOnToggle(true);
-      }, 150);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-  }, [desktop, navToggle]);
-
+function Header({
+  handleNavOpen,
+  desktop,
+  navToggle,
+  handleCloseNav,
+  showDarkOnToggle,
+  cartItem,
+}: HeaderProps) {
   return (
     <header className="header">
       {showDarkOnToggle && <DarkOnToggle handleCloseNav={handleCloseNav} />}
@@ -64,7 +48,7 @@ function Header() {
           handleCloseNav={handleCloseNav}
         />
 
-        <CartXAvatar desktop={desktop} />
+        <CartXAvatar desktop={desktop} quantity={cartItem} />
       </Stack>
     </header>
   );

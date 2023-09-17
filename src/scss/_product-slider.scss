@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  display: block;
+  height: 100%;
+
+  .item {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    max-height: 400px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .icon-button {
+    top: 50%;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 50%;
+    color: var(--clr-black);
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-accent);
+    }
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
+  }
+}

@@ -25,6 +25,8 @@ html {
     #root {
       max-width: 1440px;
       margin: 0 auto;
+      position: relative;
+      padding-bottom: 5rem;
     }
   }
 }
@@ -37,4 +39,9 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

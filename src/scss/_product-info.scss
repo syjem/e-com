@@ -1,0 +1,48 @@
+@use "./variables" as *;
+
+.product-info {
+  padding: 2rem;
+
+  .item-supplier {
+    color: var(--clr-accent);
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .item-name {
+    margin: 0;
+    color: var(--clr-dark);
+  }
+
+  .item-description {
+    margin: 0;
+    color: var(--clr-dark-gray);
+  }
+
+  .prices {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .item-price {
+      color: var(--clr-dark);
+      font-weight: 700;
+    }
+
+    .item-discount {
+      padding: 0 0.5rem;
+      background-color: hsla(26, 100%, 55%, 0.2);
+      border-radius: 8px;
+      color: var(--clr-accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .item-original-price {
+      margin-left: auto;
+      color: var(--clr-dark-gray);
+      text-decoration: line-through;
+    }
+  }
+}
