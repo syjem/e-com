@@ -3,6 +3,7 @@ import DarkOnToggle from "./DarkOnToggle";
 import Header from "./header/Header";
 import ProductSlider from "./products/ProductSlider";
 import AddToCart from "./products/AddToCartButton";
+import Stack from "@mui/material/Stack";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ProductInformation from "./products/ProductInfo";
@@ -68,14 +69,23 @@ const HomePage = () => {
       />
 
       {showDarkOnToggle && <DarkOnToggle handleCloseNav={handleCloseNav} />}
-      <ProductSlider />
-      <ProductInformation />
-      <AddToCart
-        quantity={quantity}
-        minusItem={minusItem}
-        addItem={addItem}
-        handleAddToCart={handleAddToCart}
-      />
+      <Stack
+        direction={desktop ? "row" : "column"}
+        alignItems={desktop ? "flex-start" : "center"}
+        justifyContent="center"
+        className="main"
+      >
+        <ProductSlider />
+        <Stack>
+          <ProductInformation />
+          <AddToCart
+            quantity={quantity}
+            minusItem={minusItem}
+            addItem={addItem}
+            handleAddToCart={handleAddToCart}
+          />
+        </Stack>
+      </Stack>
     </>
   );
 };

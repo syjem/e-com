@@ -1,26 +1,49 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
 .add-to-cart-section {
-  padding: 0 2rem;
+  gap: 1rem;
   width: 100%;
-  max-width: 600px;
+  display: flex;
   margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 600px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  @include media-query(768px) {
+    & {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 
   .btn-group {
-    background-color: var(--clr-light);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 0.5rem;
     border-radius: 8px;
+    align-items: center;
+    padding-inline: 0.5rem;
+    justify-content: space-between;
+    background-color: var(--clr-light);
+
+    @include media-query(768px) {
+      & {
+        width: 80%;
+      }
+    }
+
+    span {
+      font-weight: 600;
+    }
   }
 
   .cart-btn {
-    display: flex;
-    align-items: center;
     gap: 1rem;
-    text-transform: unset;
-    font-weight: 700;
     width: 100%;
-    margin-top: 1rem;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    text-transform: unset;
     background-color: var(--clr-accent);
 
     &:hover {

@@ -20,11 +20,11 @@ function AddToCart({
   return (
     <section className="add-to-cart-section">
       <div className="btn-group">
-        <IconButton onClick={minusItem}>
+        <IconButton onClick={minusItem} color="warning">
           <RemoveIcon />
         </IconButton>
         <span>{quantity}</span>
-        <IconButton onClick={addItem}>
+        <IconButton onClick={addItem} color="warning">
           <AddIcon />
         </IconButton>
       </div>

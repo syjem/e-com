@@ -1,25 +1,45 @@
 @use "./variables" as *;
+@use "./mixins" as *;
+
+.main {
+  gap: 2.5rem;
+  margin: 0 auto;
+  justify-content: center;
+
+  @include media-query(601px) {
+    & {
+      padding: 1rem;
+    }
+  }
+
+  @include media-query(1000px) {
+    & {
+      gap: 4rem;
+      padding: 3rem;
+    }
+  }
+}
 
 .slider {
   width: 100%;
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  display: block;
   height: 100%;
+  display: block;
+  position: relative;
+
+  @include media-query(600px) {
+    & {
+      overflow: hidden;
+      border-radius: 15px;
+    }
+  }
 
   .item {
-    display: none;
     width: 100%;
-    max-width: 600px;
+    display: none;
     height: 300px;
+    cursor: pointer;
+    max-width: 600px;
     max-height: 400px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
     &.active {
       display: block;
@@ -39,8 +59,8 @@
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: var(--clr-white);
       color: var(--clr-accent);
+      background-color: var(--clr-white);
     }
 
     &.left {
@@ -49,6 +69,46 @@
 
     &.right {
       right: 10px;
+    }
+
+    @include media-query(600px) {
+      & {
+        display: none;
+      }
+    }
+  }
+}
+
+.thumbnail-section {
+  gap: 2rem;
+  width: 100%;
+  display: none;
+  max-width: 400px;
+
+  @include media-query(600px) {
+    & {
+      display: flex;
+    }
+  }
+
+  .thumbnail {
+    width: 100%;
+    overflow: hidden;
+    max-width: 100px;
+    border-radius: 8px;
+
+    &.active {
+      opacity: 0.5;
+      outline: 2px solid var(--clr-accent);
+    }
+
+    img {
+      cursor: pointer;
+
+      &:active {
+        border-radius: 8px;
+        transform: scale(0.98);
+      }
     }
   }
 }
