@@ -13,6 +13,7 @@ function MenuXLogo({ handleNavOpen, desktop }: MenuXLogoProps) {
   return (
     <Stack direction="row" alignItems="center" gap={1}>
       <IconButton
+        className="icon-btn"
         color="default"
         aria-label="Menu Icon"
         onClick={handleNavOpen}

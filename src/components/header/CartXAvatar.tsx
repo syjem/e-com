@@ -31,17 +31,17 @@ function CartXAvatar({ desktop, quantity }: CartXAvatarProps) {
           color: "black",
         }}
       >
-        <IconButton aria-label="add to shopping cart" color="inherit">
+        <IconButton aria-label="shopping cart" className="cart-btn">
           <StyledBadge badgeContent={quantity} color="warning">
             <AddShoppingCartIcon fontSize={desktop ? "medium" : "small"} />
           </StyledBadge>
         </IconButton>
       </Link>
       <Avatar
+        className="avatar"
         sx={{
           width: desktop ? 40 : 30,
           height: desktop ? 40 : 30,
-          marginRight: "0.5rem",
         }}
         src={Profile}
         alt="User Avatar"

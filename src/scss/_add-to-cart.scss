@@ -35,6 +35,15 @@
     span {
       font-weight: 600;
     }
+
+    .icon-btn {
+      color: var(--clr-accent);
+      border-radius: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
 
   .cart-btn {

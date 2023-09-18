@@ -11,7 +11,7 @@ import Items from "../../data/SliderItem";
 import Thumbnails from "../../data/SliderThumbnail";
 
 function ProductSlider() {
-  const [showSlide, setShowSlide] = useState<number>(4);
+  const [showSlide, setShowSlide] = useState<number>(1);
 
   useEffect(() => {
     const totalSlides = Items.length;

@@ -26,6 +26,7 @@ function MobileNav({ navToggle, desktop, handleCloseNav }: MobileNavProps) {
     >
       <Stack direction="row" alignItems="center" gap={1}>
         <IconButton
+          className="icon-btn"
           color="default"
           aria-label="Menu Icon"
           onClick={handleCloseNav}
