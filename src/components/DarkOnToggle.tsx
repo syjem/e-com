@@ -13,7 +13,7 @@ function DarkOnToggle({ handleCloseNav }: DarkOnToggleProps) {
         display: "block",
         height: "100%",
         position: "absolute",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
       }}
       onClick={handleCloseNav}
     ></div>
