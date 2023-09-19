@@ -1,9 +1,28 @@
-import HomePage from "../components/HomePage";
+import DarkOnToggle from "../components/DarkOnToggle";
+import Header from "../components/header/Header";
+import useCustomHook from "../hooks/useCustomHook";
 
 function Cart() {
+  const {
+    desktop,
+    cartItem,
+    navToggle,
+    handleNavOpen,
+    handleCloseNav,
+    showDarkOnToggle,
+  } = useCustomHook();
+
   return (
     <>
-      <HomePage />
+      {showDarkOnToggle && <DarkOnToggle handleCloseNav={handleCloseNav} />}
+      <Header
+        desktop={desktop}
+        cartItem={cartItem}
+        navToggle={navToggle}
+        handleNavOpen={handleNavOpen}
+        handleCloseNav={handleCloseNav}
+        showDarkOnToggle={showDarkOnToggle}
+      />
     </>
   );
 }

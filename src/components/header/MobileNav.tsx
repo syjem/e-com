@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
-import Lists from "../../data/Lists";
+import Lists from "../../data/NavLists";
 
 type MobileNavProps = {
   navToggle: boolean;

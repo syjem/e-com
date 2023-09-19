@@ -2,7 +2,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
-import Lists from "../../data/Lists";
+import Lists from "../../data/NavLists";
 
 type DesktopNavProps = {
   desktop: boolean;

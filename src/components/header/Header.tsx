@@ -9,21 +9,21 @@ import DarkOnToggle from "../DarkOnToggle";
 import "../../scss/_header.scss";
 
 type HeaderProps = {
-  handleNavOpen: () => void;
-  navToggle: boolean;
   desktop: boolean;
-  handleCloseNav: () => void;
-  showDarkOnToggle: boolean;
   cartItem: number;
+  navToggle: boolean;
+  handleNavOpen: () => void;
+  showDarkOnToggle: boolean;
+  handleCloseNav: () => void;
 };
 
 function Header({
-  handleNavOpen,
   desktop,
+  cartItem,
   navToggle,
+  handleNavOpen,
   handleCloseNav,
   showDarkOnToggle,
-  cartItem,
 }: HeaderProps) {
   return (
     <header className="header">
@@ -43,8 +43,8 @@ function Header({
         </Stack>
 
         <MobileNav
-          navToggle={navToggle}
           desktop={desktop}
+          navToggle={navToggle}
           handleCloseNav={handleCloseNav}
         />
 

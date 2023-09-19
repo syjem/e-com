@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Routes from "./Routes.tsx";
+import App from "./App.tsx";
 import "./scss/_globals.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Routes />
+    <App />
   </React.StrictMode>
 );
