@@ -7,6 +7,11 @@ import ProductSlider from "../components/products/ProductSlider";
 import ProductInformation from "../components/products/ProductInfo";
 
 const HomePage = () => {
+  const cartConfig = {
+    key: "cartItem",
+    initialValue: 0,
+  };
+
   const {
     desktop,
     addItem,
@@ -18,7 +23,7 @@ const HomePage = () => {
     handleCloseNav,
     handleAddToCart,
     showDarkOnToggle,
-  } = useCustomHook();
+  } = useCustomHook(cartConfig);
 
   return (
     <>

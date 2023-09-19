@@ -1,6 +1,9 @@
-const ProductItem = [
+import item1 from "../assets/image-product-1-thumbnail.jpg";
+
+const ProductItems = [
   {
     id: 0,
+    image: item1,
     supplier: "Sneaker Company",
     name: "Fall Limited Edition Sneaker",
     price: "$125.00",
@@ -11,4 +14,4 @@ const ProductItem = [
   },
 ];
 
-export default ProductItem;
+export default ProductItems;

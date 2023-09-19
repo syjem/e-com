@@ -1,0 +1,75 @@
+@use "./mixins" as *;
+
+.cart-items {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  max-width: 400px;
+
+  .image-container {
+    width: 90px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .name-and-price {
+    height: 70px;
+    width: 100%;
+
+    h5 {
+      font-size: 1rem;
+      color: var(--clr-dark);
+      margin: 0;
+      width: 80%;
+    }
+
+    span {
+      color: var(--clr-dark);
+    }
+
+    .justify-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    width: 50%;
+    border: 1px solid var(--clr-dark-gray);
+    padding: 0 0.2rem;
+
+    .quantity {
+      font-weight: 600;
+      margin-inline: auto;
+      margin: 0 0.5rem;
+    }
+
+    .icon-btn {
+      color: var(--clr-accent);
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0;
+      font-size: 1rem;
+
+      @include media-query(600px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.check-out-btn {
+  width: 80%;
+  max-width: 350px;
+}

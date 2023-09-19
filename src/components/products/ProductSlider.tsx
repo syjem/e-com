@@ -51,7 +51,7 @@ function ProductSlider() {
         {Items.map((item) => (
           <div
             key={item.id}
-            className={`item ${showSlide === item.id ? "active" : ""}`}
+            className={`item fade ${showSlide === item.id ? "active" : ""}`}
           >
             <img src={item.src} alt={`Item ${item.id}`} />
           </div>

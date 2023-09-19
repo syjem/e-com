@@ -1,12 +1,26 @@
 import { useState, useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-function useCustomHook() {
+type CustomHookProps = {
+  key: string;
+  initialValue: number | (() => number);
+};
+
+function useCustomHook({ key, initialValue }: CustomHookProps) {
   const [quantity, setQuantity] = useState(0);
-  const [cartItem, setCartItem] = useState(0);
   const [navToggle, setNavToggle] = useState(false);
   const desktop = useMediaQuery("(min-width:600px)");
   const [showDarkOnToggle, setShowDarkOnToggle] = useState(false);
+
+  // Get Item on Local Storage
+  const savedValue = localStorage.getItem(key);
+  const parsedValue = savedValue ? JSON.parse(savedValue) : initialValue;
+  const [cartItem, setCartItem] = useState(parsedValue);
+
+  // Set Item on Local Storage
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(cartItem));
+  }, [key, cartItem]);
 
   const handleCloseNav = () => {
     setNavToggle(false);
@@ -44,7 +58,7 @@ function useCustomHook() {
 
   const handleAddToCart = () => {
     if (quantity > 0) {
-      setCartItem((prevQuantity) => prevQuantity + quantity);
+      setCartItem((cartItem: number) => cartItem + quantity);
     }
     setQuantity(0);
   };

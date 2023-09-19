@@ -1,8 +1,17 @@
+import Stack from "@mui/material/Stack";
 import DarkOnToggle from "../components/DarkOnToggle";
 import Header from "../components/header/Header";
 import useCustomHook from "../hooks/useCustomHook";
+import EmptyCart from "../components/cart/EmptyCart";
+import "../scss/_cart-page.scss";
+import FilledCart from "../components/cart/FilledCart";
 
 function Cart() {
+  const cartConfig = {
+    key: "cartItem",
+    initialValue: 0,
+  };
+
   const {
     desktop,
     cartItem,
@@ -10,7 +19,7 @@ function Cart() {
     handleNavOpen,
     handleCloseNav,
     showDarkOnToggle,
-  } = useCustomHook();
+  } = useCustomHook(cartConfig);
 
   return (
     <>
@@ -23,6 +32,9 @@ function Cart() {
         handleCloseNav={handleCloseNav}
         showDarkOnToggle={showDarkOnToggle}
       />
+      <Stack className="main cart">
+        {cartItem ? <FilledCart cartItem={cartItem} /> : <EmptyCart />}
+      </Stack>
     </>
   );
 }
