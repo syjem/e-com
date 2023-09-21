@@ -1,20 +1,37 @@
 import "../../scss/_filled-items.scss";
 import ConfirmationModal from "./Modal";
 import Button from "@mui/material/Button";
-import { Dispatch, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import React, { Dispatch, useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import ProductItems from "../../data/ProductInfo";
 import RemoveIcon from "@mui/icons-material/Remove";
+
+import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
+import CloseIcon from "@mui/icons-material/Close";
 
 type FilledCartProps = {
   cartItem: number;
   setCartItem: Dispatch<number>;
 };
 
+interface State extends SnackbarOrigin {
+  open: boolean;
+}
+
 function FilledCart({ cartItem, setCartItem }: FilledCartProps) {
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const handleClose = () => setOpenModal(false);
+  const [openFeedback, setOpenFeedback] = useState<State>({
+    open: false,
+    vertical: "bottom",
+    horizontal: "right",
+  });
+
+  const handleCloseFeedback = () => {
+    setOpenFeedback({ ...openFeedback, open: false });
+  };
+
+  const handleCloseModal = () => setOpenModal(false);
 
   const totalPrice = 125 * cartItem;
 
@@ -29,15 +46,42 @@ function FilledCart({ cartItem, setCartItem }: FilledCartProps) {
   const handleDeleteItem = () => {
     setCartItem(0);
     setOpenModal(false);
+    setOpenFeedback({ ...openFeedback, open: true });
   };
+
+  // Feedback action
+  const action = (
+    <React.Fragment>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleCloseFeedback}
+        className="close-icon"
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
 
   return (
     <>
       {openModal && (
         <ConfirmationModal
           openModal={openModal}
-          closeModal={handleClose}
+          closeModal={handleCloseModal}
           handleDeleteItem={handleDeleteItem}
+        />
+      )}
+      {openFeedback && (
+        <Snackbar
+          className="snackbar"
+          open={openFeedback.open}
+          autoHideDuration={5000}
+          onClose={handleCloseFeedback}
+          message="Item Deleted"
+          action={action}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         />
       )}
       {ProductItems.map((item) => (

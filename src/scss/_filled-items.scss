@@ -89,6 +89,10 @@
     width: 80%;
     max-width: 350px;
   }
+}
 
-
+.snackbar {
+  .close-icon {
+    background-color: transparent !important;
+  }
 }

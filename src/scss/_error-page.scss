@@ -7,15 +7,22 @@
   -ms-flex-direction: column;
 
   h1 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2.5rem;
-    color: var(--clr-accent);
+    font-style: italic;
+    color: red;
   }
 
   p {
     font-size: 1.2rem;
-    font-style: italic;
     margin: 0;
+
+    i {
+      font-size: 0.9rem;
+      &::after {
+        content: "!";
+      }
+    }
   }
 
   .shop-now-btn {
