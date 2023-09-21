@@ -37,12 +37,14 @@ function ProductSlider() {
         <IconButton
           className="icon-button left"
           onClick={() => handlePrevNext(-1)}
+          disabled={showSlide === 1}
         >
           <ChevronLeftIcon />
         </IconButton>
         <IconButton
           className="icon-button right"
           onClick={() => handlePrevNext(1)}
+          disabled={showSlide === totalSlides}
         >
           <ChevronRightIcon />
         </IconButton>

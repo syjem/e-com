@@ -7,6 +7,7 @@
   align-items: center;
   -ms-flex-direction: column;
   flex-direction: column;
+  justify-content: center;
 
   .cart-items {
     gap: 1rem;
@@ -58,6 +59,7 @@
       align-items: center;
       justify-content: space-between;
       background-color: var(--clr-light);
+      -webkit-tap-highlight-color: transparent;
 
       .quantity {
         margin: 0 0.5rem;

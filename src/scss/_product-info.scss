@@ -34,10 +34,12 @@
     }
 
     .item-discount {
+      display: flex;
       font-weight: 700;
       padding: 0 0.5rem;
       font-size: 0.9rem;
       border-radius: 8px;
+      align-items: center;
       color: var(--clr-accent);
       background-color: hsla(26, 100%, 55%, 0.2);
     }
