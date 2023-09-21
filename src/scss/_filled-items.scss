@@ -3,11 +3,9 @@
 .cart-items-section {
   gap: 2rem;
   display: flex;
-  min-height: 100vh;
   align-items: center;
   -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: center;
 
   .cart-items {
     gap: 1rem;
