@@ -40,7 +40,7 @@
   |                |                                                                      |
   | :------------- | :------------------------------------------------------------------- |
   | Solution URL:  | [https://github.com/syjem/shopping-cart](https://github.com/syjem/search)   |
-  | Live Site URL: | []() |
+  | Live Site URL: | [https://shopping-cart-9r2.pages.dev/](https://shopping-cart-9r2.pages.dev/) |
   |                |                                                                      |
 
 <br>
