@@ -58,7 +58,7 @@ function useCustomHook({ key, initialValue }: CustomHookProps) {
 
   const handleAddToCart = () => {
     setCartItem((prevCartItem: number) => prevCartItem + quantity);
-    setQuantity(1);
+    setQuantity(0);
   };
 
   return {
