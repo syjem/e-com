@@ -1,8 +1,8 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
 
 type MenuXLogoProps = {
   handleNavOpen: () => void;
@@ -13,8 +13,8 @@ function MenuXLogo({ handleNavOpen, desktop }: MenuXLogoProps) {
   return (
     <Stack direction="row" alignItems="center" gap={1}>
       <IconButton
-        className="icon-btn"
         color="default"
+        className="icon-btn"
         aria-label="Menu Icon"
         onClick={handleNavOpen}
         sx={{
@@ -31,12 +31,12 @@ function MenuXLogo({ handleNavOpen, desktop }: MenuXLogoProps) {
         <Link
           to="/"
           style={{
-            fontSize: "1.2rem",
-            color: "var(--clr-dark)",
-            fontWeight: 800,
             display: "flex",
+            fontWeight: 800,
+            fontSize: "1.2rem",
             alignItems: "center",
             paddingBottom: "0.3rem",
+            color: "var(--clr-dark)",
           }}
         >
           <span

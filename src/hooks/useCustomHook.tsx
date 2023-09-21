@@ -7,7 +7,7 @@ type CustomHookProps = {
 };
 
 function useCustomHook({ key, initialValue }: CustomHookProps) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [navToggle, setNavToggle] = useState(false);
   const desktop = useMediaQuery("(min-width:600px)");
   const [showDarkOnToggle, setShowDarkOnToggle] = useState(false);
@@ -47,7 +47,7 @@ function useCustomHook({ key, initialValue }: CustomHookProps) {
   }, [desktop, navToggle]);
 
   const minusItem = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
@@ -57,10 +57,8 @@ function useCustomHook({ key, initialValue }: CustomHookProps) {
   };
 
   const handleAddToCart = () => {
-    if (quantity > 0) {
-      setCartItem((cartItem: number) => cartItem + quantity);
-    }
-    setQuantity(0);
+    setCartItem((prevCartItem: number) => prevCartItem + quantity);
+    setQuantity(1);
   };
 
   return {
@@ -70,6 +68,7 @@ function useCustomHook({ key, initialValue }: CustomHookProps) {
     cartItem,
     minusItem,
     navToggle,
+    setCartItem,
     handleNavOpen,
     handleCloseNav,
     handleAddToCart,

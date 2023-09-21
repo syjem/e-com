@@ -1,14 +1,12 @@
 // import React from "react";
+import Stack from "@mui/material/Stack";
 import "../../scss/_product-slider.scss";
-
+import Items from "../../data/SliderItem";
+import { useEffect, useState } from "react";
 import IconButton from "@mui/material/IconButton";
+import Thumbnails from "../../data/SliderThumbnail";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import Stack from "@mui/material/Stack";
-
-import { useEffect, useState } from "react";
-import Items from "../../data/SliderItem";
-import Thumbnails from "../../data/SliderThumbnail";
 
 function ProductSlider() {
   const [showSlide, setShowSlide] = useState<number>(1);
@@ -36,14 +34,14 @@ function ProductSlider() {
     <Stack gap={2} sx={{ width: "100%", maxWidth: "400px" }}>
       <section className="slider">
         <IconButton
-          onClick={() => handlePrevNext(-1)}
           className="icon-button left"
+          onClick={() => handlePrevNext(-1)}
         >
           <ChevronLeftIcon />
         </IconButton>
         <IconButton
-          onClick={() => handlePrevNext(1)}
           className="icon-button right"
+          onClick={() => handlePrevNext(1)}
         >
           <ChevronRightIcon />
         </IconButton>

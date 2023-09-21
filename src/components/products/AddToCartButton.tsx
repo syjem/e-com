@@ -1,21 +1,21 @@
+import "../../scss/_add-to-cart.scss";
+import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
+import IconButton from "@mui/material/IconButton";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import "../../scss/_add-to-cart.scss";
 
 type AddToCartProps = {
   quantity: number;
-  minusItem: () => void;
   addItem: () => void;
+  minusItem: () => void;
   handleAddToCart: () => void;
 };
 
 function AddToCart({
+  addItem,
   quantity,
   minusItem,
-  addItem,
   handleAddToCart,
 }: AddToCartProps) {
   return (
@@ -30,8 +30,8 @@ function AddToCart({
         </IconButton>
       </div>
       <Button
-        className="cart-btn"
         variant="contained"
+        className="cart-btn"
         onClick={handleAddToCart}
       >
         <AddShoppingCartIcon />

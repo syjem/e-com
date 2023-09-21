@@ -1,17 +1,17 @@
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
+import List from "@mui/material/List";
 import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
 import Lists from "../../data/NavLists";
+import ListItem from "@mui/material/ListItem";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
 
 type MobileNavProps = {
-  navToggle: boolean;
   desktop: boolean;
+  navToggle: boolean;
   handleCloseNav: () => void;
 };
 
@@ -26,8 +26,8 @@ function MobileNav({ navToggle, desktop, handleCloseNav }: MobileNavProps) {
     >
       <Stack direction="row" alignItems="center" gap={1}>
         <IconButton
-          className="icon-btn"
           color="default"
+          className="icon-btn"
           aria-label="Menu Icon"
           onClick={handleCloseNav}
         >
@@ -38,9 +38,9 @@ function MobileNav({ navToggle, desktop, handleCloseNav }: MobileNavProps) {
           <Link
             to="/"
             style={{
+              fontWeight: 800,
               fontSize: "1.2rem",
               color: "var(--clr-dark)",
-              fontWeight: 800,
             }}
           >
             <span

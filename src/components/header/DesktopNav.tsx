@@ -1,8 +1,8 @@
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
 import Lists from "../../data/NavLists";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 
 type DesktopNavProps = {
   desktop: boolean;
@@ -22,8 +22,8 @@ function DesktopNav({ desktop }: DesktopNavProps) {
           className="nav-list"
           sx={{
             display: "flex",
-            alignItems: "center",
             padding: "0 0.5rem",
+            alignItems: "center",
           }}
         >
           <Link to={list.link} className="nav-link" key={list.list}>

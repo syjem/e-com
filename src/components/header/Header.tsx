@@ -1,8 +1,7 @@
-import Stack from "@mui/material/Stack";
-
+import MenuXLogo from "./MenuXLogo";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
-import MenuXLogo from "./MenuXLogo";
+import Stack from "@mui/material/Stack";
 import CartXAvatar from "./CartXAvatar";
 import DarkOnToggle from "../DarkOnToggle";
 
@@ -31,8 +30,8 @@ function Header({
 
       <Stack
         direction="row"
-        justifyContent="space-between"
         alignItems="center"
+        justifyContent="space-between"
         sx={{
           width: "100%",
         }}
@@ -48,7 +47,7 @@ function Header({
           handleCloseNav={handleCloseNav}
         />
 
-        <CartXAvatar desktop={desktop} quantity={cartItem} />
+        <CartXAvatar desktop={desktop} cartItem={cartItem} />
       </Stack>
     </header>
   );

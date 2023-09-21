@@ -1,6 +1,6 @@
 import React from "react";
-import ProductItems from "../../data/ProductInfo";
 import "../../scss/_product-info.scss";
+import ProductItems from "../../data/ProductInfo";
 
 function ProductInformation() {
   return (

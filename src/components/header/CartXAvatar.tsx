@@ -9,20 +9,20 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 type CartXAvatarProps = {
   desktop: boolean;
-  quantity: number;
+  cartItem: number;
 };
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
-    right: "-1px",
     top: 5,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 2px",
     zIndex: 1,
+    right: "-1px",
+    padding: "0 2px",
+    border: `2px solid ${theme.palette.background.paper}`,
   },
 }));
 
-function CartXAvatar({ desktop, quantity }: CartXAvatarProps) {
+function CartXAvatar({ desktop, cartItem }: CartXAvatarProps) {
   return (
     <Stack direction="row" alignItems="center" gap={desktop ? 2 : 1.5}>
       <Link
@@ -32,7 +32,7 @@ function CartXAvatar({ desktop, quantity }: CartXAvatarProps) {
         }}
       >
         <IconButton aria-label="shopping cart" className="cart-btn">
-          <StyledBadge badgeContent={quantity} color="warning">
+          <StyledBadge badgeContent={cartItem} color="warning">
             <AddShoppingCartIcon fontSize={desktop ? "medium" : "small"} />
           </StyledBadge>
         </IconButton>
