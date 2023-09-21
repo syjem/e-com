@@ -52,7 +52,7 @@ function ProductSlider() {
             {Math.abs(showSlide - index) <= 2 ? (
               <Box
                 component="img"
-                className={`item fade ${showSlide === item.id ? "active" : ""}`}
+                className={`item ${showSlide === item.id ? "active" : ""}`}
                 src={item.src}
                 alt={`Item ${item.id}`}
               />
